@@ -1,6 +1,6 @@
 import './App.css';
-import Simpsons from "./components/simpsons/Simpsons";
-import Characters from "./components/characters/Characters";
+import Simpsons from "./components/Simpsons/Simpsons";
+import Characters from "./components/Characters/Characters";
 
 // 1. Описати всю сім'ю сімпсонів (5 персонажів)
 let simpsons = [

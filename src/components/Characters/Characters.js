@@ -1,4 +1,4 @@
-import Character from "../character/Character";
+import Character from "../Character/Character";
 
 let rickAndMorty = [
     {
@@ -357,7 +357,7 @@ const Characters = () => {
     return (
         <div>
             {
-                rickAndMorty.map(value => (<Character element={value}/>))
+                rickAndMorty.map(value => (<Character key={value.id} element={value}/>))
             }
         </div>
     );

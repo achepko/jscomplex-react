@@ -1,4 +1,4 @@
-import Simpson from "../simpson/Simpson";
+import Simpson from "../Simpson/Simpson";
 
 function Simpsons({xxx:simpsons}) {
     return(
