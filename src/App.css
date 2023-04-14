@@ -1,18 +1,8 @@
 h1{
     text-align: center;
 }
-.main{
-    display: flex;
-    flex-direction: row;
-    column-gap: 20px;
-}
+
 .left{
     border: 2px black solid;
     padding: 20px;
-    width: 50%;
-}
-.right{
-    border: 2px red solid;
-    padding: 20px;
-    width: 50%;
 }
