@@ -8,7 +8,7 @@ const UserPosts = ({userId}) => {
         fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
             .then(response=>response.json())
             .then(allUserPosts=>setPosts([...allUserPosts]))
-    },[])
+    },[userId])
 
 
     return (
