@@ -6,7 +6,7 @@ import {userValidator} from "../../validators/user.validator";
 
 const UserForm = () => {
 
-    const {register,handleSubmit,formState:{errors,isValid},reset} = useForm();
+    const {register,handleSubmit,formState:{errors,isValid},reset} = useForm({mode:'all',resolver:joiResolver(userValidator)});
 
     const onSubmitUser = async (user)=> {
         const {data} = await userService.createUser(user)
@@ -41,40 +41,40 @@ const UserForm = () => {
     return (
         <form onSubmit={handleSubmit(onSubmitUser)}>
             <input type="text" placeholder={'name'} {...register('name')}/>
-            {/*{errors.name && <span>{errors.name.message}</span>}*/}
+            {errors.name && <span>{errors.name.message}</span>}
             <input type="text" placeholder={'username'} {...register('username')}/>
-            {/*{errors.username && <span>{errors.username.message}</span>}*/}
+            {errors.username && <span>{errors.username.message}</span>}
             <input type="text" placeholder={'email'} {...register('email')}/>
-            {/*{errors.email && <span>{errors.email.message}</span>}*/}
+            {errors.email && <span>{errors.email.message}</span>}
             <input type="text" placeholder={'street'} {...register('street')}/>
-            {/*{errors.street && <span>{errors.street.message}</span>}*/}
+            {errors.street && <span>{errors.street.message}</span>}
             <input type="text" placeholder={'suite'} {...register('suite')}/>
-            {/*{errors.suite && <span>{errors.suite.message}</span>}*/}
+            {errors.suite && <span>{errors.suite.message}</span>}
             <input type="text" placeholder={'city'} {...register('city')}/>
-            {/*{errors.city && <span>{errors.city.message}</span>}*/}
+            {errors.city && <span>{errors.city.message}</span>}
             <input type="text" placeholder={'zipcode'} {...register('zipcode')}/>
-            {/*{errors.zipcode && <span>{errors.zipcode.message}</span>}*/}
+            {errors.zipcode && <span>{errors.zipcode.message}</span>}
             <input type="text" placeholder={'lat'} {...register('lat')}/>
-            {/*{errors.lat && <span>{errors.lat.message}</span>}*/}
+            {errors.lat && <span>{errors.lat.message}</span>}
             <input type="text" placeholder={'lng'} {...register('lng')}/>
-            {/*{errors.lng && <span>{errors.lng.message}</span>}*/}
+            {errors.lng && <span>{errors.lng.message}</span>}
             <input type="text" placeholder={'phone'} {...register('phone')}/>
-            {/*{errors.phone && <span>{errors.phone.message}</span>}*/}
+            {errors.phone && <span>{errors.phone.message}</span>}
             <input type="text" placeholder={'website'} {...register('website')}/>
-            {/*{errors.website && <span>{errors.website.message}</span>}*/}
+            {errors.website && <span>{errors.website.message}</span>}
             <input type="text" placeholder={'companyName'} {...register('companyName')}/>
-            {/*{errors.companyName && <span>{errors.companyName.message}</span>}*/}
+            {errors.companyName && <span>{errors.companyName.message}</span>}
             <input type="text" placeholder={'catchPhrase'} {...register('catchPhrase')}/>
-            {/*{errors.catchPhrase && <span>{errors.catchPhrase.message}</span>}*/}
+            {errors.catchPhrase && <span>{errors.catchPhrase.message}</span>}
             <input type="text" placeholder={'bs'} {...register('bs')}/>
-            {/*{errors.bs && <span>{errors.bs.message}</span>}*/}
-            <button>Add new user</button>
+            {errors.bs && <span>{errors.bs.message}</span>}
+            <button disabled={!isValid}>Add new user</button>
         </form>
     );
 };
 
 export default UserForm;
 
-// {mode:'all',resolver:joiResolver(userValidator)}
-// disabled={!isValid}
+
+
 
