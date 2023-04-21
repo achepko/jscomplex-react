@@ -2,7 +2,7 @@ const baseURL = 'https://jsonplaceholder.typicode.com';
 
 const posts = '/posts'
 const urls = {
-    post:{
+    posts:{
         getById:(id)=>`${posts}/${id}`
     },
     albums:'/albums',
