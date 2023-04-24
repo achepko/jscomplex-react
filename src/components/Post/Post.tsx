@@ -10,7 +10,7 @@ const Post: FC<IProps> = () => {
 
     const {postId} = useParams();
 
-    const [post,setPost] = useState<IPost|null>(null);
+    const [post,setPost] = useState<IPost>(null);
 
     useEffect(()=>{
         postService.getById(`${postId}`).then(value => value.data).then(value => setPost(value))
@@ -18,9 +18,15 @@ const Post: FC<IProps> = () => {
 
     return (
         <div>
-            <div>id:{post.id}</div>
-            <div>title:{post.title}</div>
-            <div>body:{post.body}</div>
+            {post && (
+                <div>
+                    <div>id:{post.id}</div>
+                    <div>title:{post.title}</div>
+                    <div>body:{post.body}</div>
+                    <hr/>
+                    <hr/>
+                </div>
+            )}
         </div>
     );
 };

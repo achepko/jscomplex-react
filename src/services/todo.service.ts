@@ -5,7 +5,7 @@ import {urls} from "../constants/urls";
 
 
 const todoService = {
-    getAll:():IRes<ITodo>=>axiosService.get(urls.todos)
+    getAll:():IRes<ITodo[]>=>axiosService.get(urls.todos)
 }
 
 export {

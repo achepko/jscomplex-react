@@ -1,12 +1,18 @@
 import {FC} from "react";
+import {useNavigate} from "react-router-dom";
+import './Header.css'
 
-interface IProps {
 
-}
+const Header: FC = () => {
 
-const Header: FC<IProps> = () => {
+    const navigate = useNavigate();
+
     return (
-        <div>
+        <div className={'Header'}>
+
+            <button onClick={()=>navigate('albums')}>ALBUMS</button>
+            <button onClick={()=>navigate('comments')}>COMMENTS</button>
+            <button onClick={()=>navigate('todos')}>TODOS</button>
 
         </div>
     );

@@ -19,7 +19,7 @@ const Comment: FC<IProps> = ({comment}) => {
             <div>name:{name}</div>
             <div>email:{email}</div>
             <div>body:{body}</div>
-            <button onClick={()=>navigate(`${postId}`,{state:{postId}})}>Post</button>
+            <button onClick={()=>navigate(`${postId}`)}>Post</button>
             <hr/>
 
         </div>
