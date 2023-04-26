@@ -1,0 +1,14 @@
+.Header{
+    display: flex;
+    justify-content: space-around;
+    background: cornflowerblue;
+}
+
+.Header a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+.Header a[class='active']{
+    color: palevioletred;
+}
