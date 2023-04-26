@@ -1,14 +1,18 @@
 import React from 'react';
+import {useAppReducer} from "../hooks/useAppReducer";
+import {carActions} from "../reducers/car.reducer";
 
-const Car = ({car,setCatForUpdate}) => {
+const Car = ({car}) => {
+    const [,dispatch] = useAppReducer(state=>state.cars);
     let {id,brand, price, year} = car;
+
     return (
         <div>
             <div>id:{id}</div>
             <div>brand:{brand}</div>
             <div>price:{price}</div>
             <div>year:{year}</div>
-            <button onClick={()=> {setCatForUpdate(car)}}>Update</button>
+            <button onClick={()=>dispatch(carActions.setCarForUpdate(car))}>update</button>
         </div>
     );
 };

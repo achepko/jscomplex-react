@@ -1,21 +1,20 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import {carService} from "../../services/car.service";
 import Car from "../Car/Car";
-import CarForm from "../CarForm/CarForm";
+import {useAppReducer} from "../hooks/useAppReducer";
+import {carActions} from "../reducers/car.reducer";
 
 const Cars = () => {
-    let [cars, setCars] = useState([]);
-    let [allCars, setAllCars] = useState(null);
-    let [carForUpdate, setCatForUpdate] = useState(null);
+
+    const [{cars,trigger},dispatch] = useAppReducer(state=>state.cars);
 
     useEffect(()=>{
-        carService.getAll().then(value => value.data).then(value => setCars(value))
-    },[allCars])
+        carService.getAll().then(value => value.data).then(value => dispatch(carActions.setAll(value)))
+    },[dispatch,trigger])
     return (
         <div>
-            {<CarForm setAllCars={setAllCars} carForUpdate={carForUpdate} setCatForUpdate={setCatForUpdate} />}
             <hr/>
-            {cars.map(car=><Car key={car.id} car={car} setCatForUpdate={setCatForUpdate} />)}
+            {cars.map(car=><Car key={car.id} car={car}/>)}
         </div>
     );
 };
