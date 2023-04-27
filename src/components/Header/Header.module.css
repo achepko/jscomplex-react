@@ -1,3 +1,13 @@
 .Header{
-
+    display: flex;
+    background: coral;
+    justify-content: space-around;
+    font-size: 50px;
+}
+.Header a{
+    color: antiquewhite;
+    text-decoration: none;
+}
+.Header a[class="active"]{
+    color: cornflowerblue;
 }

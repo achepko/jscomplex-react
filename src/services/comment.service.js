@@ -4,7 +4,7 @@ import {urls} from "../constants/urls";
 
 class CommentService {
     getAll(){
-        axiosService.get(urls.comments)
+        return axiosService.get(urls.comments)
     }
 }
 
