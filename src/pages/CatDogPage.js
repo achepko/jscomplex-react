@@ -1,11 +1,11 @@
-
+import React from 'react';
 
 const CatDogPage = () => {
-  return(
-      <div>
-          CatDogPage
-      </div>
-  )
-}
+    return (
+        <div>
+            CatDogPage
+        </div>
+    );
+};
 
-export {CatDogPage}
+export default CatDogPage;
