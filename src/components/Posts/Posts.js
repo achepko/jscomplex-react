@@ -10,7 +10,7 @@ class Posts extends Component {
     componentDidMount() {
         postService.getAll().then(value => value.data).then(value => this.setState({posts:value}))
     }
-
+    
     render() {
         return (
             <div>
