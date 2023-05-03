@@ -1,6 +1,5 @@
 
 const Comment = ({comment}) => {
-    console.log(comment);
     const {id,name,email} = comment;
     return (
         <div>
