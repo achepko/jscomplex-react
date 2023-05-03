@@ -1,13 +1,12 @@
-import {axiosService} from "./axios.service";
+import {axiosCarAPIService} from "./axios.service";
 import {urls} from "../constants";
 
 
 const carService={
-    getAll:()=>axiosService.get(urls.cars),
-    getById:(id)=>axiosService.get(`${urls.cars}/${id}`),
-    createCar:(car)=>axiosService.post(urls.cars,car),
-    updateCarById:(id,car)=>axiosService.put(`${urls.cars}/${id}`,car),
-    deleteCarById:(id)=>axiosService.delete(`${urls.cars}/${id}`)
+    getAll:()=>axiosCarAPIService.get(urls.cars.cars),
+    createCar:(car)=>axiosCarAPIService.post(urls.cars.cars,car),
+    updateCarById:(id,car)=>axiosCarAPIService.put(urls.cars.byId(id),car),
+    deleteCarById:(id)=>axiosCarAPIService.delete(urls.cars.byId(id))
 }
 
 export {

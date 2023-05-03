@@ -8,4 +8,4 @@ const CarForm = () => {
     );
 };
 
-export default CarForm;
+export {CarForm};

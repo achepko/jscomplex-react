@@ -1,10 +1,12 @@
 import axios from "axios";
-import {baseURL} from "../constants";
+import {carAPI, jsonPhAPI} from "../constants";
 
-const axiosService = axios.create({baseURL})
+const axiosPhAPIService = axios.create({baseURL:jsonPhAPI})
+const axiosCarAPIService = axios.create({baseURL:carAPI})
 
 
 
 export{
-    axiosService
+    axiosPhAPIService,
+    axiosCarAPIService
 }

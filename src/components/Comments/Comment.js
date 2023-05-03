@@ -1,11 +1,14 @@
-import React from 'react';
 
-const Comment = () => {
+const Comment = ({comment}) => {
+    console.log(comment);
+    const {id,name,email} = comment;
     return (
         <div>
-            
+            <div>id:{id}</div>
+            <div>name:{name}</div>
+            <div>email:{email}</div>
         </div>
     );
 };
 
-export default Comment;
+export {Comment};

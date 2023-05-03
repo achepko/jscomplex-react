@@ -1,9 +1,18 @@
-const baseURL = 'https://jsonplaceholder.typicode.com/'
+const jsonPhAPI = 'https://jsonplaceholder.typicode.com/'
+const carAPI = 'http://owu.linkpc.net/carsAPI/v1/doc'
 
+const cars = '/cars'
 const urls = {
     users:'/users',
     comments:'/comments',
-    cars:'/cars'
+    cars: {
+        cars,
+        byId:(id)=>`${cars}/${id}`
+    }
 }
 
-export {baseURL,urls}
+export {
+    jsonPhAPI,
+    carAPI,
+    urls
+}

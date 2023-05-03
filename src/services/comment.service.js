@@ -1,9 +1,10 @@
-import {axiosService} from "./axios.service";
+import {axiosPhAPIService} from "./axios.service";
 import {urls} from "../constants";
 
 
 const commentService ={
-    getAll:()=> axiosService.get(urls.comments)
+    getAll:()=> axiosPhAPIService.get(urls.comments),
+    create:(comment)=> axiosPhAPIService.post(urls.comments,comment)
 }
 
 export {

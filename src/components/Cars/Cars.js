@@ -1,4 +1,3 @@
-import React from 'react';
 
 const Cars = () => {
     return (
@@ -8,4 +7,4 @@ const Cars = () => {
     );
 };
 
-export default Cars;
+export {Cars};

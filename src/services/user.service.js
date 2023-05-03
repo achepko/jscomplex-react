@@ -1,8 +1,9 @@
-import {axiosService} from "./axios.service";
+import {axiosPhAPIService} from "./axios.service";
 import {urls} from "../constants";
 
-const userService ={
-  getAll:()=> axiosService.get(urls.users)
+const userService = {
+    getAll: () => axiosPhAPIService.get(urls.users),
+    create: (user) => axiosPhAPIService.post(urls.users, user)
 }
 export {
     userService
