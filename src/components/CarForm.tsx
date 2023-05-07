@@ -4,11 +4,8 @@ import {ICar} from "../interfaces";
 import {useAppDispatch, useAppSelector} from "../hooks";
 import {carActions} from "../redux";
 
-interface IProps {
 
-}
-
-const CarForm: FC<IProps> = () => {
+const CarForm: FC = () => {
     const {reset, register, handleSubmit,setValue} = useForm<ICar>();
     const dispatch = useAppDispatch();
     const {carForUpdate} = useAppSelector(state => state.carReducer);
